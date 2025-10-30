@@ -1,0 +1,171 @@
+body {
+    background: linear-gradient(90deg, red, blue);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.miCascada {
+    width: 320px;
+    height: auto;
+    background-color: rgb(146, 150, 175);
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    border: 5px solid rgb(149, 13, 13);
+    padding: 10px;
+    margin: 30px;
+    transition: 1s;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,10);
+}
+
+.miCascada:hover {
+    transform: translate(20px,-25px);
+}
+
+.migrid {
+    width: auto;
+    height: 320px;
+    background-color: rgb(158, 228, 7);
+    text-align: center;
+    align-content: center;
+    border: 5px solid rgb(11, 10, 10);
+    padding: 10px;
+    margin: 15px;
+    border-radius: 30px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,10);
+    transition: 2s;
+}
+
+.migrid:hover {
+    background-color: rgb(7, 228, 215);
+    border: 5px solid rgb(0, 0, 0);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.rotate{
+    transition: 2.5s;
+    position:relative;
+    z-index: 1;
+}
+
+.rotate:hover{
+    z-index: 10;
+    transform: rotate(-10deg) translateX(80px) scale(1.2);
+}
+
+.animate:hover{
+    transform: translate(15px,-15px);
+}
+
+.sesgar{
+    transform: skew(-5deg,5deg);
+}
+
+.degradar{
+    background-color: antiquewhite;
+    background-image: url(../media/Avatar_Penguin-512.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.degradar:hover{
+    background-color: antiquewhite;
+    transition: 3s;
+    background-image: url(../media/cartoon-white-cow-head-cute-animal_igtxZS2.png);
+}
+
+body {
+    font-size: 16px;
+    padding: 10px;
+}
+
+div img{
+    width: 300px;
+}
+
+@media (min-width:1024px){
+    body{
+        font-size: 20px;
+        padding: 30px;
+    }
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main .";
+    padding: 10px;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+}
+
+.miCascada h1{
+    animation-name: animacion;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animacion{
+ 0%{
+ color:blue;
+}
+ 25%{
+ color:chocolate;
+ transform: translateX(80px);
+}
+ 50%{
+ color: Brown;
+}
+ 75%{
+ color:rgb(211,26,26);
+ transform: translateX(50px);
+}
+ 100%{
+ color: blue;
+}
+}

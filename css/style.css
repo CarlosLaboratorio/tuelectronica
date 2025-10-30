@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(90deg, red, blue);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s infinite alternate;
+    /* perspectiva para las transformaciones 3D del cubo */
+    perspective: 1000px;
+    perspective-origin: 50% 40%;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.cube {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    /* giro principal: más lento y con easing para que sea más atractivo */
+    animation: rotateCube 8s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+    will-change: transform;
+}
+
+/* Giro más atractivo: rotación completa en Y, sólo una ligera oscilación en X
+   para dar dinamismo sin voltear completamente las caras (las letras no quedan boca abajo) */
+@keyframes rotateCube {
+    0% {
+        transform: rotateX(-12deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(12deg) rotateY(180deg);
+    }
+    100% {
+        transform: rotateX(-12deg) rotateY(360deg);
+    }
+}
+
+.cube h1{
+    font-size: 100px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 200px;
+    animation-name: animacion;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    /* evitar que la cara posterior se vea volteada y mejorar nitidez en 3D */
+    backface-visibility: hidden;
+}
+
+@keyframes animacion{
+ 0%{
+ color:blue;
+}
+ 25%{
+ color:chocolate;
+}
+ 50%{
+ color: Brown;
+}
+ 75%{
+ color:rgb(211,26,26);
+}
+ 100%{
+ color: blue;
+}
+}
