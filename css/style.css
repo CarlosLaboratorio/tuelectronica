@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(90deg, red, blue);
+    background: linear-gradient(90deg, red, rgb(58, 84, 2));
     background-size: 200% 200%;
     animation: gradientAnimation 5s infinite alternate;
     /* perspectiva para las transformaciones 3D del cubo */
